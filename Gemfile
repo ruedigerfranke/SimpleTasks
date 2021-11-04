@@ -37,6 +37,7 @@ group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
 
   # RSpec for testing
+  gem 'rspec-collection_matchers'
   gem 'rspec-rails'
 
   # FactoryBot
