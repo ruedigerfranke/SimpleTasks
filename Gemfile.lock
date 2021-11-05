@@ -90,6 +90,10 @@ GEM
     ffi (1.15.4)
     globalid (0.5.2)
       activesupport (>= 5.0)
+    hotwire-rails (0.1.3)
+      rails (>= 6.0.0)
+      stimulus-rails
+      turbo-rails
     i18n (1.8.11)
       concurrent-ruby (~> 1.0)
     jaro_winkler (1.5.4)
@@ -233,9 +237,11 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
+    stimulus-rails (0.7.1)
+      rails (>= 6.0.0)
     thor (1.1.0)
     tilt (2.0.10)
-    turbo-rails (0.5.1)
+    turbo-rails (7.1.1)
       rails (>= 6.0.0)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
@@ -268,6 +274,7 @@ DEPENDENCIES
   devise
   factory_bot_rails
   faker
+  hotwire-rails
   jbuilder (~> 2.7)
   listen (~> 3.3)
   pg (~> 1.1)
@@ -281,7 +288,6 @@ DEPENDENCIES
   rubocop-rails
   rubocop-rspec
   solargraph
-  turbo-rails
   tzinfo-data
   web-console (>= 4.1.0)
   webpacker (~> 5.0)

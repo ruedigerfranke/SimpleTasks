@@ -27,7 +27,7 @@ gem 'redis', '~> 4.0'
 gem 'bootsnap', '>= 1.4.4', require: false
 
 # Hotwire Turbo
-gem 'turbo-rails'
+gem 'hotwire-rails'
 
 # Devise for user authentication
 gem 'devise'
