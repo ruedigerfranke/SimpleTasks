@@ -62,6 +62,9 @@ group :development do
   gem 'rubocop'
   gem 'rubocop-rails'
   gem 'rubocop-rspec'
+
+  # Add linter for erb
+  gem 'htmlbeautifier'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
