@@ -13,6 +13,12 @@
 
   <body>
     <%= render 'shared/header' %>
+    <div class="absolute top-3 right-3">
+      <% flash.each do |type, msg| %>
+        <% title = type == 'alert' ? 'An error occur!' : 'Notify!' %>
+        <%= render partial: 'shared/notification_message', locals: { type: type, title: title, message: msg }%>
+      <% end %>
+    </div>
     <%= yield %>
   </body>
 </html>

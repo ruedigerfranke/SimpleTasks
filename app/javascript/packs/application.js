@@ -5,7 +5,7 @@
 
 import "@hotwired/turbo-rails";
 import "channels";
-// import "controllers";
+import "controllers";
 import "core-js/stable";
 import "regenerator-runtime/runtime";
 import * as ActiveStorage from "@rails/activestorage";
