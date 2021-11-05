@@ -22,7 +22,7 @@ class ProjectsController < ApplicationController
 
   # POST /projects or /projects.json
   def create
-    @project = Project.new(project_params)
+    @project = new_project_for_current_user
 
     respond_to do |format|
       if @project.save
@@ -62,6 +62,12 @@ class ProjectsController < ApplicationController
   # Use callbacks to share common setup or constraints between actions.
   def set_project
     @project = Project.find(params[:id])
+  end
+
+  def new_project_for_current_user
+    project = Project.new(project_params)
+    project.user = current_user
+    project
   end
 
   # Only allow a list of trusted parameters through.

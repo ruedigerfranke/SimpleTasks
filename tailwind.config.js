@@ -1,10 +1,13 @@
 module.exports = {
-  mode: "jit",
-  purge: [
-    "./app/views/**/*.html.erb",
-    "./app/helpers/**/*.rb",
-    "./javascript/**/*.js",
-  ],
+  mode: 'jit',
+  purge: {
+    content: [
+      './app/views/**/*.html.erb',
+      './app/helpers/**/*.rb',
+      './javascript/**/*.js',
+    ],
+    safelist: ['input-error', 'text-red-400'],
+  },
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {},
@@ -12,5 +15,5 @@ module.exports = {
   variants: {
     extend: {},
   },
-  plugins: [require("daisyui")],
-};
+  plugins: [require('daisyui')],
+}

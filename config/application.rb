@@ -36,5 +36,23 @@ module SimpleTasks
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    config.action_view.field_error_proc = proc { |html_tag, instance|
+      errors = Array(instance.error_message).join(', ')
+      # byebug
+      case html_tag
+      when /^<label/
+        if html_tag =~ /^<label(?:\s+.*)*(\s+alt="(?:checkbox|hidden)")(?:\s+.*)*\s*/
+          %(#{html_tag}<label class="label"><span class="label-text-alt">&nbsp;#{errors}</span></label>).html_safe
+        else
+          html_tag.to_s.html_safe
+        end
+      when %r{(<input(?:\s+.*)*(\s+type="(?:checkbox|hidden)")(?:\s+.*)*\s*/>)}
+        html_tag.to_s.html_safe
+      else
+        html_tag = html_tag.sub('"input ', '"input input-error ')
+        %(#{html_tag}<label class="label label-text-alt"><span class="text-red-400">&nbsp;#{errors}</span></label>).html_safe # rubocop:disable Layout/LineLength
+      end
+    }
   end
 end
