@@ -10,7 +10,13 @@
   <div class="card bordered mb-3">
     <div class="card-body">
       <h2 class="card-title">Tasks</h2>
-      <p class="text-sm text-center text-gray-400">No tasks created yet.</p>
+      <% if @project.tasks.any? %>
+        <% @project.tasks.each do |task| %>
+          <%= render task %>
+        <% end %>
+      <% else %>
+        <p class="text-sm text-center text-gray-400">No tasks created yet.</p>
+      <% end %>
     </div>
   </div>
 
