@@ -45,6 +45,13 @@ group :development, :test do
 
   # Faker
   gem 'faker'
+
+  # Acts as list for sorting
+  gem 'acts_as_list', '~> 1.0', '>= 1.0.4'
+
+  # Haml for views
+  gem 'erb2haml'
+  gem 'haml-rails'
 end
 
 group :development do

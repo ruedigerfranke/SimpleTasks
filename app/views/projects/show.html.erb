@@ -11,9 +11,11 @@
     <div class="card-body">
       <h2 class="card-title">Tasks</h2>
       <% if @project.tasks.any? %>
-        <% @project.tasks.each do |task| %>
-          <%= render task %>
-        <% end %>
+        <div data-controller="drag" data-url="<%= move_project_task_path(@project, ':id') %>">
+          <% @project.tasks.order(position: :asc).each do |task| %>
+            <%= render task %>
+          <% end %>
+        </div>
       <% else %>
         <p class="text-sm text-center text-gray-400">No tasks created yet.</p>
       <% end %>

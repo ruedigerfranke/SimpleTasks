@@ -3,15 +3,15 @@
 // a relevant structure within app/javascript and only use these pack files to reference
 // that code so it'll be compiled.
 
-import "@hotwired/turbo-rails";
-import "channels";
-import "controllers";
-import "core-js/stable";
-import "regenerator-runtime/runtime";
-import * as ActiveStorage from "@rails/activestorage";
-import Rails from "@rails/ujs";
+import '@hotwired/turbo-rails'
+import 'channels'
+import 'core-js/stable'
+import 'regenerator-runtime/runtime'
+import * as ActiveStorage from '@rails/activestorage'
+import Rails from '@rails/ujs'
+import 'controllers'
 
-import "stylesheets/application.scss";
+import 'stylesheets/application.scss'
 
-Rails.start();
-ActiveStorage.start();
+Rails.start()
+ActiveStorage.start()
