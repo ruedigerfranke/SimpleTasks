@@ -1,0 +1,10 @@
+.mb-4{"data-controller" => "notification_message", "data-notification_message-target" => "msgElement"}
+  .flex.max-w-sm.w-full.bg-white.shadow-md.rounded-lg.overflow-hidden.mx-auto
+    %div{:class => "w-2 #{type == 'alert' ? 'bg-red-600' : 'bg-green-600'}"}
+    .w-full.flex.justify-between.items-start.px-2.py-2
+      .flex.flex-col.ml-2
+        %label.text-gray-800= title
+        %p.text-gray-500= message
+      %a{"data-action" => "click->notification_message#close", :href => "#"}
+        %svg.h-6.w-6.text-gray-500{:fill => "none", :stroke => "currentColor", :viewbox => "0 0 24 24", :xmlns => "http://www.w3.org/2000/svg"}
+          %path{:d => "M6 18L18 6M6 6l12 12", "stroke-linecap" => "round", "stroke-linejoin" => "round", "stroke-width" => "2"}

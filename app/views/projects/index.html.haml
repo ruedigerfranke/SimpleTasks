@@ -1,0 +1,30 @@
+.container.mx-auto.p-4
+  %p#notice= notice
+  %h1.text-2xl.mb-2 Your Projects
+  - @projects.each do |project|
+    = render project
+  /
+    <table>
+    <thead>
+    <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>User</th>
+    <th colspan="3"></th>
+    </tr>
+    </thead>
+    <tbody>
+    <haml_silent>       @projects.each do |project|
+    </haml_silent><haml_block>    <tr>
+    <td><haml_loud> project.name </haml_loud></td>
+    <td><haml_loud> project.description </haml_loud></td>
+    <td><haml_loud> project.user_id </haml_loud></td>
+    <td><haml_loud> link_to &#39;Show&#39;, project </haml_loud></td>
+    <td><haml_loud> link_to &#39;Edit&#39;, edit_project_path(project) </haml_loud></td>
+    <td><haml_loud> link_to &#39;Destroy&#39;, project, method: :delete, data: { confirm: &#39;Are you sure?&#39; } </haml_loud></td>
+    </tr>
+    </haml_block></tbody>
+    </table>
+    <br>
+  .mt-3
+    = link_to 'New Project', new_project_path, class: 'btn btn-md btn-secondary'

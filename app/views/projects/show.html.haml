@@ -1,0 +1,18 @@
+.container.mx-auto.p-4
+  %p#notice= notice
+  .card.bordered.mb-3
+    .card-body
+      %h1.card-title= @project.name
+      %p= @project.description
+  .card.bordered.mb-3
+    .card-body
+      %h2.card-title Tasks
+      - if @project.tasks.any?
+        %div{"data-controller" => "drag", "data-url" => "#{move_project_task_path(@project, ':id')}"}
+          - @project.tasks.order(position: :asc).each do |task|
+            = render task
+      - else
+        %p.text-sm.text-center.text-gray-400 No tasks created yet.
+  = link_to 'Edit', edit_project_path(@project), class: 'link'
+  |
+  \#{link_to 'Back', projects_path, class: 'link'}
