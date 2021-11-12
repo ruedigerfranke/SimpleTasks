@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>SimpleTasks</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -16,7 +16,7 @@
     <div class="absolute top-3 right-3">
       <% flash.each do |type, msg| %>
         <% title = type == 'alert' ? 'An error occur!' : 'Notify!' %>
-        <%= render partial: 'shared/notification_message', locals: { type: type, title: title, message: msg }%>
+        <%= render partial: 'shared/notification_message', locals: { type: type, title: title, message: msg } %>
       <% end %>
     </div>
     <%= yield %>
