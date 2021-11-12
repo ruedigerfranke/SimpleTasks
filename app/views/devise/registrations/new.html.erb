@@ -1,0 +1,32 @@
+<%= render "devise/shared/background_image" do %>
+  <h2 class="text-lg">Sign up</h2>
+
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+
+    <div class="form-control">
+      <%= f.label :email, class: 'label label-text' %>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "input input-sm input-bordered" %>
+    </div>
+
+    <div class="form-control">
+      <%= f.label :password, class: 'label label-text' %>
+      <%= f.password_field :password, autocomplete: "new-password", class: "input input-sm input-bordered" %>
+      <% if @minimum_password_length %>
+        <label class="label label-text-alt">(<%= @minimum_password_length %> characters minimum)</label>
+      <% end %>
+    </div>
+
+    <div class="form-control">
+      <%= f.label :password_confirmation, class: 'label label-text' %><br />
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "input input-sm input-bordered" %>
+    </div>
+
+    <div class="mt-3">
+      <%= f.submit "Sign up", class: "btn btn-primary btn-block" %>
+    </div>
+  <% end %>
+
+  <%= render "devise/shared/links" %>
+
+<% end %>
